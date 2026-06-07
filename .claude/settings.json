@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://afllaabdi.github.io/portofolio/\")",
+      "Bash(curl -s \"https://api.github.com/repos/afllaabdi/portofolio/branches\")"
+    ]
+  }
+}
