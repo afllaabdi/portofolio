@@ -155,7 +155,7 @@ export default function Hero() {
                 />
               </motion.button>
               <motion.a
-                href="/Afllah_Abdi_Pratomo_CV.pdf"
+                href="/portofolio/Afllah_Abdi_Pratomo_CV.pdf"
                 download
                 className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-secondary border border-border text-foreground font-semibold hover:bg-secondary/80 hover:border-orange-500/30 transition-all duration-300"
                 whileHover={{ scale: 1.03, y: -2 }}
@@ -180,7 +180,7 @@ export default function Hero() {
               {[
                 { value: '3+', label: 'Projects' },
                 { value: '10+', label: 'Technologies' },
-                { value: '1+', label: 'Years Exp' },
+                { value: 'AI & Data Science', label: 'Specialization' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

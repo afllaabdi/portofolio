@@ -8,7 +8,8 @@ export const profile = {
   email: 'afllaabdi1@gmail.com',
   github: 'https://github.com/afllaabdi',
   linkedin: 'https://www.linkedin.com/in/afllah-abdi-pratomo-42298a288/',
-  avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Afllah&backgroundColor=0d1b2a&clothesColor=ff6f00',
+  instagram: 'https://www.instagram.com/aflaabdi_/',
+ avatarUrl: '/portofolio/profile.jpg',
   avatarFallback: 'AAP',
   interests: [
     'Data Analytics',
