@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Afllah Abdi Pratomo — Data Scientist & Software Engineer',
+  title: 'Afllah Abdi Pratomo | Data Science Student & Software Developer',
   description:
-    'Portfolio of Afllah Abdi Pratomo — S1 Teknik Informatika UMM. Spesialis Data Science, Machine Learning, AI, dan Software Development. Mengembangkan solusi berbasis data dan teknologi modern.',
+    'Portfolio of Afllah Abdi Pratomo — Data Science Student & Software Developer at UMM. Focused on Data Science, Machine Learning, Computer Vision, and Software Development.',
   keywords: [
     'Afllah Abdi Pratomo',
-    'Data Scientist',
+    'Data Science',
     'Machine Learning',
-    'Data Analytics',
-    'Software Engineer',
     'Computer Vision',
+    'Software Developer',
+    'Software Engineer',
     'Portfolio',
     'UMM',
     'Universitas Muhammadiyah Malang',
@@ -19,17 +19,17 @@ export const metadata: Metadata = {
   authors: [{ name: 'Afllah Abdi Pratomo' }],
   creator: 'Afllah Abdi Pratomo',
   openGraph: {
-    title: 'Afllah Abdi Pratomo — Data Scientist & Software Engineer',
+    title: 'Afllah Abdi Pratomo | Data Science Student & Software Developer',
     description:
-      'Mahasiswa S1 Teknik Informatika UMM dengan minat di Data Science, ML, AI, dan Software Development.',
+      'Mahasiswa Teknik Informatika UMM yang berfokus pada Data Science, Machine Learning, Computer Vision, dan Software Development.',
     type: 'website',
     locale: 'id_ID',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Afllah Abdi Pratomo — Data Scientist & Software Engineer',
+    title: 'Afllah Abdi Pratomo | Data Science Student & Software Developer',
     description:
-      'Mahasiswa S1 Teknik Informatika UMM dengan minat di Data Science, ML, AI, dan Software Development.',
+      'Mahasiswa Teknik Informatika UMM yang berfokus pada Data Science, Machine Learning, Computer Vision, dan Software Development.',
   },
   robots: {
     index: true,

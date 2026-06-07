@@ -97,7 +97,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-medium mb-6"
             >
               <Sparkles size={14} className="animate-pulse" />
-              Data Scientist & Software Engineer
+              Data Science Student & Software Developer
             </motion.div>
 
             {/* Name */}
@@ -178,9 +178,9 @@ export default function Hero() {
               className="mt-10 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
             >
               {[
-                { value: '3+', label: 'Projects' },
+                { value: '3', label: 'Featured Projects' },
                 { value: '10+', label: 'Technologies' },
-                { value: 'AI & Data Science', label: 'Specialization' },
+                { value: 'Computer Vision & AI', label: 'Specialization' },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

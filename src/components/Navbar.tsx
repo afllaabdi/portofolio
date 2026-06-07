@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react'
+import { Menu, X, Github, Linkedin, Mail, MessageCircle } from 'lucide-react'
 import { profile, navLinks } from '@/data/portfolio'
 import { cn } from '@/lib/utils'
 
@@ -100,7 +100,7 @@ export default function Navbar() {
                 <Linkedin size={18} />
               </motion.a>
               <motion.a
-                href={`mailto:${profile.email}`}
+                href={`mailto:${profile.email}?subject=Portfolio%20Inquiry%20-%20Afllah%20Abdi%20Pratomo`}
                 className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
@@ -109,11 +109,20 @@ export default function Navbar() {
                 <Mail size={18} />
               </motion.a>
               <motion.a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick('#contact')
-                }}
+                href="https://wa.me/6282180812741"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={18} />
+              </motion.a>
+              <motion.a
+                href="https://wa.me/6282180812741?text=Halo%20Afllah,%20saya%20melihat%20portfolio%20Anda%20dan%20tertarik%20untuk%20berdiskusi."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-orange-500 text-white text-sm font-semibold shadow-lg shadow-orange-900/30 hover:shadow-orange-900/50 transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
@@ -186,11 +195,20 @@ export default function Navbar() {
                     <Linkedin size={20} />
                   </a>
                   <a
-                    href={`mailto:${profile.email}`}
+                    href={`mailto:${profile.email}?subject=Portfolio%20Inquiry%20-%20Afllah%20Abdi%20Pratomo`}
                     className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
                     aria-label="Email"
                   >
                     <Mail size={20} />
+                  </a>
+                  <a
+                    href="https://wa.me/6282180812741"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+                    aria-label="WhatsApp"
+                  >
+                    <MessageCircle size={20} />
                   </a>
                 </div>
               </div>

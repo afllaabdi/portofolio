@@ -141,30 +141,22 @@ export default function Education() {
               <p className="text-sm text-muted-foreground">Tahun Masuk Kuliah</p>
             </div>
 
-            {/* Interest Stats */}
-            <div className="rounded-2xl bg-card/80 border border-border p-6 space-y-4">
-              <h4 className="text-sm font-semibold text-center">Area Minat</h4>
-              {[
-                { label: 'Data Science', value: 95 },
-                { label: 'Machine Learning', value: 88 },
-                { label: 'Computer Vision', value: 75 },
-                { label: 'Software Dev', value: 80 },
-              ].map((item, i) => (
-                <div key={item.label}>
-                  <div className="flex justify-between text-xs mb-1">
-                    <span className="text-muted-foreground">{item.label}</span>
-                    <span className="text-orange-400 font-medium">{item.value}%</span>
+            {/* Area Fokus */}
+            <div className="rounded-2xl bg-card/80 border border-border p-6">
+              <h4 className="text-sm font-semibold mb-4">Area Fokus</h4>
+              <div className="space-y-2">
+                {[
+                  'Data Science',
+                  'Machine Learning',
+                  'Computer Vision',
+                  'Software Development',
+                ].map((area) => (
+                  <div key={area} className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                    <span className="text-sm text-muted-foreground">{area}</span>
                   </div>
-                  <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${item.value}%` } : {}}
-                      transition={{ duration: 1, delay: 0.5 + i * 0.1 }}
-                      className="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-500"
-                    />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* CTA Card */}

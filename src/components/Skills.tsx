@@ -145,10 +145,10 @@ export default function Skills() {
         >
           <p className="text-center text-sm text-muted-foreground">
             <span className="text-orange-400 font-semibold">⚡ Quick Stats:</span>{' '}
-            {skills.length} technologies mastered across{' '}
-            <span className="text-foreground font-medium">5 categories</span> — Python
-            sebagai core strength, dengan kuat di Data Science stack (Pandas, NumPy,
-            Scikit-Learn) dan Web Development (Laravel, Flutter).
+            {skills.length} technologies across{' '}
+            <span className="text-foreground font-medium">5 categories</span>, with a
+            strong focus on Python, Data Science, Computer Vision, and Software
+            Development.
           </p>
         </motion.div>
       </div>

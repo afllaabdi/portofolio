@@ -10,7 +10,7 @@ const contactInfo = [
     icon: Mail,
     label: 'Email',
     value: profile.email,
-    href: `mailto:${profile.email}`,
+    href: `mailto:${profile.email}?subject=Portfolio%20Inquiry%20-%20Afllah%20Abdi%20Pratomo`,
   },
   {
     icon: MapPin,

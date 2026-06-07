@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
   ScanFace,
@@ -10,6 +10,8 @@ import {
   Github,
   CheckCircle2,
   ChevronRight,
+  Images,
+  X,
 } from 'lucide-react'
 import { projects } from '@/data/portfolio'
 import { cn } from '@/lib/utils'
@@ -23,6 +25,7 @@ const iconMap: Record<string, React.ElementType> = {
 export default function Projects() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const [lightboxImg, setLightboxImg] = useState<{ label: string; src: string } | null>(null)
 
   return (
     <section id="projects" className="relative py-24 sm:py-32">
@@ -135,6 +138,54 @@ export default function Projects() {
                     ))}
                   </ul>
 
+                  {/* Project Gallery */}
+                  {project.gallery && project.gallery.length > 0 && (
+                    <div className="mb-5 p-4 rounded-xl bg-secondary/50 border border-border">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Images size={14} className="text-orange-400" />
+                        <span className="text-xs font-semibold text-muted-foreground">
+                          Project Gallery
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        {project.gallery.map((img, k) => (
+                          <div
+                            key={k}
+                            onClick={() => img.src && setLightboxImg(img)}
+                            className={cn(
+                              'relative rounded-lg overflow-hidden border border-border aspect-video flex items-center justify-center cursor-pointer transition-all duration-300',
+                              img.src
+                                ? 'hover:border-orange-500/40 hover:shadow-md hover:shadow-orange-900/20'
+                                : 'bg-card/80 cursor-default'
+                            )}
+                          >
+                            {img.src ? (
+                              <img
+                                src={img.src}
+                                alt={img.label}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="flex flex-col items-center gap-1 p-2">
+                                <div className="w-8 h-8 rounded bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                                  <Images size={14} className="text-orange-400/50" />
+                                </div>
+                                <span className="text-[10px] text-muted-foreground/60 text-center leading-tight px-1">
+                                  {img.label}
+                                </span>
+                              </div>
+                            )}
+                            {img.src && (
+                              <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                                <Images size={16} className="text-white" />
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Actions */}
                   <div className="flex items-center gap-3 pt-4 border-t border-border">
                     <motion.a
@@ -188,6 +239,42 @@ export default function Projects() {
             <ChevronRight size={14} />
           </motion.a>
         </motion.div>
+
+        {/* Lightbox Modal */}
+        {lightboxImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setLightboxImg(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-3xl w-full rounded-2xl overflow-hidden bg-card border border-border shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setLightboxImg(null)}
+                className="absolute top-3 right-3 z-10 p-2 rounded-lg bg-black/50 text-white hover:bg-black/70 transition-colors cursor-pointer"
+                aria-label="Close lightbox"
+              >
+                <X size={16} />
+              </button>
+              <div className="p-4 border-b border-border flex items-center gap-2">
+                <Images size={14} className="text-orange-400" />
+                <span className="text-sm font-medium">{lightboxImg.label}</span>
+              </div>
+              <img
+                src={lightboxImg.src}
+                alt={lightboxImg.label}
+                className="w-full aspect-video object-contain bg-black/50"
+              />
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   )

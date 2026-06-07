@@ -5,30 +5,42 @@ import { motion, useInView } from 'framer-motion'
 import {
   MapPin,
   GraduationCap,
-  Heart,
-  Target,
-  Award,
-  Users,
+  BrainCircuit,
+  Code2,
+  Eye,
+  Layers,
 } from 'lucide-react'
 import { profile, languages } from '@/data/portfolio'
 import { staggerDelay } from '@/lib/utils'
 
 const highlights = [
   {
-    icon: Target,
-    title: 'Problem Solver',
-    desc: 'Mampu menganalisis dan menyelesaikan masalah teknis secara sistematis',
+    icon: BrainCircuit,
+    title: 'Data Science & AI',
+    desc: 'Membangun model machine learning dan solusi AI untuk berbagai kasus, dari analisis data hingga computer vision.',
   },
   {
-    icon: Users,
-    title: 'Team Player',
-    desc: 'Berpengalaman bekerja dalam tim dan kolaborasi proyek',
+    icon: Code2,
+    title: 'Software Development',
+    desc: 'Mengembangkan aplikasi web dan mobile menggunakan Laravel, Flutter, dan Python dengan pendekatan clean code.',
   },
   {
-    icon: Award,
-    title: 'Self Learner',
-    desc: 'Selalu belajar hal baru dan mengikuti perkembangan teknologi',
+    icon: Eye,
+    title: 'Computer Vision',
+    desc: 'Berpengalaman dengan OpenCV dan face recognition untuk membangun sistem berbasis penglihatan komputer.',
   },
+  {
+    icon: Layers,
+    title: 'Technology Enthusiast',
+    desc: 'Selalu mempelajari teknologi baru dan mengembangkan proyek untuk meningkatkan kemampuan teknis.',
+  },
+]
+
+const focusAreas = [
+  { label: 'Data Science', icon: BrainCircuit },
+  { label: 'Machine Learning', icon: Code2 },
+  { label: 'Computer Vision', icon: Eye },
+  { label: 'Software Development', icon: Layers },
 ]
 
 export default function About() {
@@ -77,34 +89,44 @@ export default function About() {
 
               {/* Bio Text */}
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>{profile.summary}</p>
                 <p>
-                  Saya percaya bahwa data adalah aset berharga yang jika dikelola dengan
-                  benar dapat memberikan insight luar biasa untuk pengambilan keputusan.
-                  Saya terus mengasah kemampuan di bidang Data Science dan Machine
-                  Learning sembari mengeksplorasi pengembangan perangkat lunak modern.
+                  Perjalanan saya di dunia teknologi dimulai dari ketertarikan terhadap
+                  bagaimana data dapat bercerita. Dari situlah saya mulai mendalami Data Science
+                  dan Machine Learning, sembari mengasah kemampuan di bidang pengembangan
+                  perangkat lunak.
+                </p>
+                <p>
+                  Sejauh ini, saya telah membangun berbagai proyek mulai dari sistem absensi
+                  berbasis face recognition, aplikasi mobile untuk reservasi layanan, hingga
+                  platform manajemen gym. Setiap proyek menjadi kesempatan untuk belajar
+                  hal baru dan memahami kebutuhan pengguna secara nyata.
+                </p>
+                <p>
+                  Ke depan, saya ingin berkontribusi di bidang AI dan software development,
+                  membangun solusi teknologi yang bermanfaat secara langsung bagi masyarakat.
                 </p>
               </div>
 
-              {/* Interest Tags */}
+              {/* Area Fokus */}
               <div>
                 <h4 className="flex items-center gap-2 text-sm font-semibold mb-3">
-                  <Heart size={16} className="text-orange-400" />
-                  Minat & Fokus
+                  <BrainCircuit size={16} className="text-orange-400" />
+                  Area Fokus
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {profile.interests.map((interest, i) => (
+                  {focusAreas.map((area, i) => (
                     <motion.span
-                      key={interest}
+                      key={area.label}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{
                         duration: 0.4,
                         delay: 0.3 + staggerDelay(i, 0.05),
                       }}
-                      className="px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300 text-xs font-medium"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300 text-xs font-medium"
                     >
-                      {interest}
+                      <area.icon size={12} />
+                      {area.label}
                     </motion.span>
                   ))}
                 </div>
@@ -144,7 +166,6 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="space-y-6"
           >
-            {/* Highlights Cards */}
             {highlights.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -171,21 +192,6 @@ export default function About() {
                 </div>
               </motion.div>
             ))}
-
-            {/* Fun Fact Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="p-6 rounded-2xl bg-gradient-to-br from-orange-900/30 to-amber-900/20 border border-orange-500/20"
-            >
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                💡{' '}
-                <span className="text-orange-300 font-medium">Fun Fact:</span>{' '}
-                Saya lebih produktif saat mendengarkan lo-fi music sambil ngopi.
-                Kalau lagi stuck di bug, biasanya jalan-jalan sebentar baru balik lagi — works every time! 😄
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </div>

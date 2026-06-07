@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Afllah Abdi Pratomo',
-  title: 'Data Scientist & Software Engineer',
-  tagline: 'Membangun solusi cerdas berbasis data dan teknologi modern',
+  title: 'Data Science Student & Software Developer',
+  tagline: 'Membangun solusi berbasis data dan teknologi modern',
   summary:
-    'Mahasiswa S1 Teknik Informatika Universitas Muhammadiyah Malang yang memiliki minat kuat pada Data Analytics, Data Science, Machine Learning, Artificial Intelligence, dan Software Development. Berpengalaman menggunakan Python untuk pengolahan data dan analisis data menggunakan Pandas, NumPy, Matplotlib, serta Scikit-Learn. Memiliki pengalaman membangun aplikasi web menggunakan Laravel dan Flutter serta mengembangkan proyek berbasis Computer Vision.',
+    'Mahasiswa Teknik Informatika Universitas Muhammadiyah Malang yang berfokus pada Data Science, Machine Learning, Computer Vision, dan Software Development. Berpengalaman membangun aplikasi berbasis Python, Laravel, Flutter, serta proyek AI menggunakan OpenCV dan Face Recognition.',
   location: 'Malang, Jawa Timur, Indonesia',
   email: 'afllaabdi1@gmail.com',
   github: 'https://github.com/afllaabdi',
@@ -12,12 +12,9 @@ export const profile = {
  avatarUrl: '/portofolio/profile.jpg',
   avatarFallback: 'AAP',
   interests: [
-    'Data Analytics',
     'Data Science',
     'Machine Learning',
     'Computer Vision',
-    'NLP',
-    'AI Research',
     'Software Development',
   ],
 }
@@ -161,7 +158,7 @@ export const projects = [
     title: 'Face Recognition Attendance System',
     description:
       'Sistem absensi otomatis berbasis pengenalan wajah real-time menggunakan OpenCV dan Face Recognition (dlib). Sistem ini melakukan pencatatan kehadiran otomatis ke file CSV dengan fitur registrasi wajah, pengelolaan dataset, dan monitoring absensi.',
-    technologies: ['Python', 'OpenCV', 'Face Recognition (dlib)', 'Computer Vision', 'CSV', 'Multithreading'],
+    technologies: ['Python', 'OpenCV', 'dlib', 'Tkinter', 'Computer Vision', 'Face Recognition', 'Multithreading'],
     highlights: [
       'Real-time face detection dan recognition menggunakan OpenCV & dlib',
       'Pencatatan kehadiran otomatis ke file CSV',
@@ -172,8 +169,14 @@ export const projects = [
     icon: 'scan-face',
     gradient: 'from-orange-600 to-amber-600',
     status: 'completed' as const,
-    github: 'https://github.com/afllaabdi',
+    github: 'https://github.com/afllaabdi/Face-Recognition-Attendance-System',
     link: 'https://github.com/afllaabdi',
+    gallery: [
+      { label: 'Main Dashboard', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Face Detection', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Face Registration', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Attendance Records', src: '' }, // TODO: Replace with actual screenshot path
+    ],
   },
   {
     id: 2,
@@ -219,9 +222,9 @@ export const education = {
   institution: 'Universitas Muhammadiyah Malang',
   degree: 'S1 Teknik Informatika',
   period: '2023 — Sekarang',
-  gpa: 'IPK: 3.xx / 4.00',
+  gpa: 'IPK tersedia atas permintaan',
   description:
-    'Universitas Muhammadiyah Malang merupakan salah satu universitas terbaik di Jawa Timur yang memiliki program studi Teknik Informatika dengan kurikulum yang relevan dengan industri.',
+    'Saat ini menempuh pendidikan S1 Teknik Informatika dengan fokus pada Data Science, Machine Learning, Computer Vision, dan Software Development.',
   courses: [
     'Struktur Data & Algoritma',
     'Basis Data',
@@ -240,7 +243,6 @@ export const education = {
 }
 
 export const languages = [
-  { name: 'Indonesia', level: 'Native', flag: '🇮🇩' },
   { name: 'English', level: 'Able to read technical documentation', flag: '🇬🇧' },
 ]
 
