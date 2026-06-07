@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 35 80% 96%;
+    --card: 220 18% 9%;
+    --card-foreground: 35 80% 96%;
+    --popover: 220 18% 9%;
+    --popover-foreground: 35 80% 96%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 35 80% 96%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 25 95% 53%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 bg-[length:200%_auto] animate-gradient;
+  }
+
+  .glow {
+    box-shadow: 0 0 30px hsl(25 95% 53% / 0.25);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 15px hsl(25 95% 53% / 0.15);
+  }
+
+  .glass {
+    @apply bg-card/60 backdrop-blur-md border border-border/50;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 20% 6%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(25 95% 53% / 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(25 95% 53% / 0.7);
+}
+
+/* Selection */
+::selection {
+  background: hsl(25 95% 53% / 0.25);
+  color: hsl(35 80% 96%);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid hsl(25 95% 53%);
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar for mobile nav */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
