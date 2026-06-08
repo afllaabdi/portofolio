@@ -196,6 +196,12 @@ export const projects = [
     status: 'completed' as const,
     github: 'https://github.com/afllaabdi',
     link: 'https://github.com/afllaabdi',
+    gallery: [
+      { label: 'Home Screen', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Service Booking', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Reservation Detail', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'User Profile', src: '' }, // TODO: Replace with actual screenshot path
+    ],
   },
   {
     id: 3,
@@ -215,6 +221,12 @@ export const projects = [
     status: 'completed' as const,
     github: 'https://github.com/afllaabdi',
     link: 'https://github.com/afllaabdi',
+    gallery: [
+      { label: 'Dashboard', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Member Management', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Field Reservation', src: '' }, // TODO: Replace with actual screenshot path
+      { label: 'Event Management', src: '' }, // TODO: Replace with actual screenshot path
+    ],
   },
 ]
 

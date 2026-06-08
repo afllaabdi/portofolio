@@ -85,7 +85,12 @@ export default function Projects() {
                   </motion.div>
 
                   {/* Status Badge */}
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-4 left-4 flex gap-1.5">
+                    {project.gallery && project.gallery.length > 0 && (
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                        Gallery Available
+                      </span>
+                    )}
                     <span
                       className={cn(
                         'px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider',
